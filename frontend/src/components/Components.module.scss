@@ -1,0 +1,162 @@
+$colorShadeA: rgb(106, 163, 137);
+$colorShadeB: rgb(121, 186, 156);
+$colorShadeC: rgb(150, 232, 195);
+$colorShadeD: rgb(187, 232, 211);
+$colorShadeE: rgb(205, 255, 232);
+
+* {
+    font-family:'Courier New', Courier, monospace;
+}
+
+.errorText {
+    color: red;
+    margin: 0;
+}
+
+.error {
+    border-color: red;
+}
+
+.homeDiv {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        text-align: center;
+    }
+    
+    .homeBtnGroup {
+        display: flex;
+        flex-direction: row;
+    
+        .homeBtnCreate, .homeBtnJoin {
+            margin: 10px;
+            padding: 15px 35px;
+            font-size: 23px;
+            box-shadow: -6px 6px 0 black;
+            transition: all 0.3s ease-in-out;
+            color: black;
+            text-decoration: none;
+        }
+
+        .homeBtnCreate:hover, .homeBtnJoin:hover {
+            box-shadow: none;
+            transform: translate(-6px, 6px);
+        }
+
+        .homeBtnCreate {
+            background-color: greenyellow;
+        }
+
+        .homeBtnJoin {
+            background-color: rgb(223, 94, 94);
+        }
+    }
+}
+
+.joinDiv {
+    display: flex;
+    flex-direction: column;
+
+    input[type="text"] {
+        text-transform: uppercase;
+        height: 30px;
+        font-size: 25px;
+        padding: 3px 5px;
+    }
+}
+
+.createDiv, .joinDiv, .roomDiv  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.createDiv {
+    width: fit-content;
+    border-radius: 15px; 
+}
+
+.createForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.btnsDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+button, .returnBtn {
+    margin: 10px 0 5px;
+    transition: all 0.5s;
+    cursor: pointer;
+    line-height: 2;
+    font-size: 16px;
+}
+
+.returnBtn {
+    margin: 25px 0;
+    width: 100%;
+    border: 0.7px solid black;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    transition: all 0.5s ease-out;
+}
+
+.returnBtn:hover {
+    box-shadow: 0 6px 0 grey;
+    border-bottom: 1px solid black;
+}
+
+.joinBtn, .createBtn {
+    margin: 15px 0;
+    padding: 1em 2em;
+    border: 2px solid $colorShadeA;
+    border-radius: 1em;
+    background: $colorShadeE;
+    transform-style: preserve-3d;
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+.joinBtn::before, .createBtn::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: $colorShadeC;
+    border-radius: inherit;
+    box-shadow: 0 0 0 2px $colorShadeB, 0 0.75em 0 0 $colorShadeA;
+    transform: translate3d(0, 0.75em, -1em);
+    transition: all 175ms cubic-bezier(0, 0, 1, 1);
+}
+
+
+.joinBtn:hover, .createBtn:hover {
+    background: $colorShadeD;
+    transform: translate(0, 0.375em);
+}
+
+.joinBtn:hover::before, .createBtn:hover::before {
+    transform: translate3d(0, 0.75em, -1em);
+}
+
+.joinBtn:active, .createBtn:active {
+    transform: translate(0em, 0.75em);
+}
+
+.joinBtn:active::before, .createBtn:active::before {
+    transform: translate3d(0, 0, -1em);
+    box-shadow: 0 0 0 2px $colorShadeB, 0 0.25em 0 0 $colorShadeB;
+}
+
