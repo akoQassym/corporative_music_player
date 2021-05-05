@@ -11,6 +11,7 @@ import s from "./Components.module.scss";
 import RoomJoinPage from "./RoomJoinPage";
 import CreateRoomPage from "./CreateRoomPage";
 import Room from "./Room";
+import Info from "./Info";
 
 export default class HomePage extends Component {
   constructor(props) {
@@ -44,6 +45,7 @@ export default class HomePage extends Component {
         <div className={s.homeBtnGroup}>
           <Link to="/join" className={s.homeBtnJoin}>Подключиться</Link>
           <Link to="/create" className={s.homeBtnCreate}>Создать комнату</Link>
+          <Link to="/info" className={s.homeBtnInfo}>Info</Link>
         </div>
       </div>
     );
@@ -62,6 +64,7 @@ export default class HomePage extends Component {
               }} />
               <Route path="/join" component={RoomJoinPage}/>
               <Route path="/create" component={CreateRoomPage}/>
+              <Route path="/info" component={Info}/>
               <Route 
                 path="/room/:roomCode" 
                 render={(props)=>{

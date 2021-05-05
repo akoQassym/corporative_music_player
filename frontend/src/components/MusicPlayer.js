@@ -45,13 +45,6 @@ export default class MusicPlayer extends Component {
     const songProgress = (this.props.time / this.props.duration) * 100;
     return (
       <Card>
-        <Collapse in={this.state.permissionError != ""}>
-          {this.state.permissionError != "" ? (
-            <Alert severity="error" onClose={ () => {this.setState({permissionError: ""})} }>{this.state.permissionError}</Alert>
-          ) : 
-            null
-          }
-        </Collapse>
         <Grid container alignItems="center">
           <Grid item align="center" xs={4}>
             <img src={this.props.image_url} height="100%" width="100%" />
